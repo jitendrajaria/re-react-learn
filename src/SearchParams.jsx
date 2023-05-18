@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import Pet from "./Pet.jsx";
 import useBreedList from "./useBreedList.js";
+import Results from "./Results.jsx";
 
 export default function SearchParams() {
   const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
   const [location, setLocation] = useState("");
   const [breed, setBreed] = useState("");
   const [animal, setAnimal] = useState("");
-  const [pets, setPets] = useState([]);
+  const [, setPets] = useState([]);
   const [breeds] = useBreedList(animal);
 
   useEffect(() => {
@@ -79,9 +79,7 @@ export default function SearchParams() {
         </button>
       </form>
 
-      {pets.map((pet) => {
-        return <Pet {...pet} key={pet.id} />;
-      })}
+      <Results />
     </div>
   );
 }

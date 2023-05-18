@@ -32,10 +32,11 @@
         "react": {
             "version": "detect"
         },
-        "import/resolve": {
+        "import/resolver": {
             "node": {
                 "extensions": [
-                    ".js"
+                    ".js",
+                    ".jsx"
                 ]
             }
         }
