@@ -7,7 +7,7 @@ export default function SearchParams() {
   const [location, setLocation] = useState("");
   const [breed, setBreed] = useState("");
   const [animal, setAnimal] = useState("");
-  const [, setPets] = useState([]);
+  const [pets, setPets] = useState([]);
   const [breeds] = useBreedList(animal);
 
   useEffect(() => {
@@ -78,8 +78,7 @@ export default function SearchParams() {
           Submit
         </button>
       </form>
-
-      <Results />
+      <Results pets={pets} />
     </div>
   );
 }
